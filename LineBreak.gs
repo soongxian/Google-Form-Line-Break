@@ -7,7 +7,7 @@ function addLineBreaks()
   // modify form title 
 
   var mainTitle = form.getTitle();
-  form.setTitle(mainTitle.split(". ").join("\n"));
+  form.setTitle(mainTitle.split("|").join("\n"));
 
 
   var subSection = form.getItems(FormApp.ItemType.PAGE_BREAK);
@@ -19,7 +19,7 @@ function addLineBreaks()
     var subSectionTitle = subSection[i].getTitle();
       
 
-    subSection[i].setTitle(subSectionTitle.split(". ").join("\n"));
+    subSection[i].setTitle(subSectionTitle.split("|").join("\n"));
 
   }
 
@@ -34,19 +34,8 @@ function addLineBreaks()
     var title = questions[i].getTitle();
       
 
-    questions[i].setTitle(title.split(". ").join("\n"));
+    questions[i].setTitle(title.split("|").join("\n"));
 
   }
 
 }
-// function quickTest() {
-//   const aForm = FormApp.getActiveForm();
-//   const doubleLine = "first line\nsecond line"
-
-//   aForm.setTitle(doubleLine)
-//   aForm.addSectionHeaderItem();
-//   aForm.setDescription(doubleLine);
-//   var aItem = aForm.getItems()[1];
-//   aItem.setTitle(doubleLine);
-//   aItem.setHelpText(doubleLine);
-// }
